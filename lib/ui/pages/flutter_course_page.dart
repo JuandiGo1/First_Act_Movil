@@ -19,8 +19,63 @@ class FlutterCoursePage extends StatelessWidget {
     ));
   }
 
-  Widget buildHeader() {
-    return const Text("Flutter course");
+Widget buildHeader() {
+    return Container(
+        height: 100,
+        color: Colors.blueAccent,
+        child: Padding(
+            padding: EdgeInsets.all(15),
+            child: Row(
+              children: [
+                Expanded(
+                    flex: 2,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Flutter Course',
+                          style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Column(children: [
+                          Text(
+                            '2015-10',
+                            style: TextStyle(fontSize: 15, color: Colors.white),
+                          )
+                        ]),
+                      ],
+                    )),
+                Expanded(
+                    child: Row(
+                  children: [
+                    Expanded(
+                        child: Padding(
+                      padding: EdgeInsets.only(right: 10, left: 10),
+                      child: ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor:
+                                  WidgetStateProperty.all(Colors.black),
+                              iconColor: WidgetStateProperty.all(Colors.white)),
+                          child: Icon(Icons.search),
+                          onPressed: () {}),
+                    )),
+                    Expanded(
+                        child: Padding(
+                      padding: EdgeInsets.only(right: 10, left: 10),
+                      child: ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor:
+                                  WidgetStateProperty.all(Colors.black),
+                              iconColor: WidgetStateProperty.all(Colors.white)),
+                          child: Icon(Icons.notifications),
+                          onPressed: () {}),
+                    )),
+                  ],
+                ))
+              ],
+            )));
   }
 
   Widget buildCourseFocus() {
